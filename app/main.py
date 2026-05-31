@@ -4,24 +4,17 @@ import fighting_config.battle_class
 
 def battle(knights_config: dict) -> dict:
 
-    both_of_knights = fighting_config.battle_class.KnightsBattle(knights_config)
+    both_of_knights = (fighting_config.
+                       battle_class.KnightsBattle(knights_config))
     # BATTLE PREPARATIONS:
 
-    # lancelot
     lancelot = both_of_knights.knights["lancelot"].show_info()
-    both_of_knights.parametrization_of_knight(lancelot)
-
-    # arthur
     arthur = both_of_knights.knights["arthur"].show_info()
-    both_of_knights.parametrization_of_knight(arthur)
-
-    # mordred
     mordred = both_of_knights.knights["mordred"].show_info()
-    both_of_knights.parametrization_of_knight(mordred)
-
-    # red_knight
     red_knight = both_of_knights.knights["red_knight"].show_info()
-    both_of_knights.parametrization_of_knight(red_knight)
+
+    for knight in [lancelot, arthur, mordred, red_knight]:
+        both_of_knights.parametrization_of_knight(knight)
 
     # -------------------------------------------------------------------------------
     # BATTLE:
